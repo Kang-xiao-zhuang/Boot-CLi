@@ -13,7 +13,6 @@ public class UserServiceImpl implements UserService {
     @LogAnnotation
     @Override
     public void list(UserDto dto) {
-        int a=1/0;
         log.info(dto.toString());
     }
 
