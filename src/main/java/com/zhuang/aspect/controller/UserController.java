@@ -1,6 +1,6 @@
 package com.zhuang.aspect.controller;
 
-import com.zhuang.aspect.annotation.LogAnnotation;
+import com.zhuang.aspect.annotation.RequestLimit;
 import com.zhuang.aspect.dto.UserDto;
 import com.zhuang.aspect.enums.ResultEnum;
 import com.zhuang.aspect.service.UserService;
@@ -21,7 +21,8 @@ public class UserController {
 
 
     @PostMapping("get")
-    public ResultVO getUser(@RequestBody UserDto userDto) {
+    @RequestLimit(time = 1000)
+    public ResultVO getUser(@RequestBody(required = false) UserDto userDto) {
         try {
             if (!ObjectUtils.isEmpty(userDto)) {
                 userService.list(userDto);
