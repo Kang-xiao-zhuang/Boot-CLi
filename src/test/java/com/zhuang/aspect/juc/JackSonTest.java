@@ -1,4 +1,4 @@
-package com.zhuang.aspect.jackson;
+package com.zhuang.aspect.juc;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
